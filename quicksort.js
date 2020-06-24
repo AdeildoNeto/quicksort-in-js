@@ -1,13 +1,12 @@
 function quicksort(array) {
-if(array.length === 0) return [];
-if(array.length === 1) return array;
+    if (array.length === 0) return [];
+    if (array.length === 1) return array;
 
- let pivot = array[0];
+    let pivot = array[0];
 
- let {smallers, equal, biggers} = spread(array, pivot);
+    let { smallers, equal, biggers } = spread(array, pivot);
 
- return quicksort(smallers).concat(equal).concat(quicksort(biggers));
-
+    return quicksort(smallers).concat(equal).concat(quicksort(biggers));
 }
 
 function spread(arr, pivot) {
@@ -15,14 +14,14 @@ function spread(arr, pivot) {
     let equal = [];
     let biggers = [];
 
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] < pivot) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < pivot) {
             smallers.push(arr[i])
         }
-        if(arr[i] == pivot) {
+        if (arr[i] == pivot) {
             equal.push(arr[i]);
         }
-        if(arr[i] > pivot) {
+        if (arr[i] > pivot) {
             biggers.push(arr[i])
         }
     }
@@ -31,6 +30,4 @@ function spread(arr, pivot) {
     }
 }
 
-console.log(quicksort([3, 44, 5,7, 6, 2, 7]));
-
-
+console.log(quicksort([3, 44, 5, 7, 6, 2, 7]));
