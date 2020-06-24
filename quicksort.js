@@ -1,6 +1,5 @@
 function quicksort(array) {
-    if (array.length === 0) return [];
-    if (array.length === 1) return array;
+    if (array.length === 0 || array.length === 1) return array;
 
     let pivot = array[0];
 
